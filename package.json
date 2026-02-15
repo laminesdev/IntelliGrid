@@ -1,0 +1,18 @@
+{
+  "name": "intelligrid",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "concurrently \"bun run dev:api\" \"bun run dev:web\"",
+    "dev:web": "bun run --cwd frontend dev",
+    "dev:api": "cd backend && source venv/bin/activate && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload",
+    "build": "bun run --cwd frontend build",
+    "test": "cd backend && source venv/bin/activate && pytest tests/ -v",
+    "install:all": "bun install && cd backend && python3.13 -m venv venv && source venv/bin/activate && pip install -r requirements.txt",
+    "shadcn:add": "bun run --cwd frontend shadcn:add"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

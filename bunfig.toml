@@ -1,0 +1,18 @@
+[install]
+# Use exact versions for reproducibility
+exact = true
+
+# Cache packages globally
+cache = true
+
+[run]
+# Silent output for cleaner logs
+silent = false
+
+# Environment variables
+[install.scopes]
+
+# Workspace configuration
+[workspace]
+# All packages in apps/* are part of the workspace
+packages = ["apps/*"]

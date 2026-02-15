@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Pure Black Theme with Brand Color */
+    --background: 0 0% 0%;           /* Pure black #000000 */
+    --foreground: 0 0% 100%;         /* Pure white #FFFFFF */
+    --card: 0 0% 4%;                 /* Near black #0A0A0A */
+    --card-foreground: 0 0% 100%;     /* White */
+    --popover: 0 0% 4%;              /* Near black */
+    --popover-foreground: 0 0% 100%; /* White */
+    --primary: 82 74% 55%;           /* Brand color #99E135 */
+    --primary-foreground: 0 0% 0%;   /* Black */
+    --secondary: 0 0% 10%;            /* Dark gray #1A1A1A */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 0 0% 15%;               /* Dark gray #262626 */
+    --muted-foreground: 0 0% 60%;    /* Medium gray #999999 */
+    --accent: 82 74% 55%;            /* Brand color #99E135 */
+    --accent-foreground: 0 0% 0%;    /* Black */
+    --destructive: 0 84.2% 60.2%;     /* Red */
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;              /* Border gray #333333 */
+    --input: 0 0% 15%;               /* Input gray #262626 */
+    --ring: 82 74% 55%;              /* Brand color ring */
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(153, 225, 53, 0.15);
+  }
+  
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(153, 225, 53, 0.3);
+    box-shadow: 0 4px 30px rgba(153, 225, 53, 0.15);
+  }
+  
+  /* Brand Glow Effect */
+  .brand-glow {
+    box-shadow: 0 0 20px rgba(153, 225, 53, 0.3);
+  }
+  
+  .brand-glow-strong {
+    box-shadow: 0 0 40px rgba(153, 225, 53, 0.5);
+  }
+  
+  /* Brand Border Glow */
+  .brand-border {
+    border: 1px solid rgba(153, 225, 53, 0.3);
+  }
+  
+  /* Gradient Text */
+  .text-gradient-brand {
+    background: linear-gradient(135deg, #99E135 0%, #7bc025 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Custom Scrollbar for Dark Theme */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #99E135;
+  }
+}
+
+/* Chart.js Dark Theme Defaults */
+.chart-dark {
+  color: #fff;
+}
+
+.chart-dark canvas {
+  filter: drop-shadow(0 0 10px rgba(153, 225, 53, 0.2));
+}
